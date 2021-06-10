@@ -31,7 +31,7 @@ You can check it on test.pwn
 
 ## Testing
 
-To test, make sure you enable `local: true` and then upload the text lists into scriptfiles. Then simply run the following commands:
+To test, make sure you enable `local: true` and then upload the text lists into scriptfiles. After doing those steps, run the following commands:
 
 ```bash
 sampctl package ensure
