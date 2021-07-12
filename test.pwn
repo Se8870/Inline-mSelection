@@ -5,25 +5,28 @@
 #define YSI_NO_CACHE_MESSAGE
 #define YSI_NO_OPTIMISATION_MESSAGE
 
-#include <Inline_mSelection>
+#include "Inline_mSelection.inc"
 
 new 
 	g_MakeSkins = mS_INVALID_LISTID;
 
-public OnGameModeInit() {
+public OnGameModeInit()
+{
 	g_MakeSkins = LoadModelSelectionMenu("makeskin.txt");
 }
 
-main() { 
+main() 
+{ 
 
 }
 
-public OnPlayerSpawn(playerid) {
-	inline _OnModelResponse(response, modelid) {
+public OnPlayerSpawn(playerid) 
+{
+	inline _OnModelResponse(response, modelid) 
+	{
 		if (!response) return Kick(playerid);
-
 		SetPlayerSkin(playerid, modelid);
 	}
-	ShowModelSelectionInline(playerid, g_MakeSkins, "Select Skin", using inline _OnModelResponse);
+	ShowModelSelectionInline(using inline _OnModelResponse, playerid, g_MakeSkins, "Select Skin");
 	return 1;
 }
